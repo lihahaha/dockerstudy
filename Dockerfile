@@ -10,8 +10,7 @@ WORKDIR /usr/src/nodejs/dockerstudy/
 # RUN/COPY是分层的，package.json 提前，只要没修改就不会重新安装包
 COPY package.json /usr/src/nodejs/dockerstudy/package.json
 RUN cd /usr/src/nodejs/dockerstudy/
-RUN npm config set registry https://registry.npmjs.org/
-RUN npm i
+RUN npm install
 
 # 把当前目录下所有的文件拷贝到 Image 的 /usr/src/nodejs/目录下
 COPY . /usr/src/nodejs/dockerstudy/
